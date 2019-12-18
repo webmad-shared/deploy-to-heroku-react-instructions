@@ -11,9 +11,8 @@ In order to deploy to Heroku your React app there will be some elements you will
    2. `client`. This will contain your React app.
 2. A **your database running in MongoDB Atlas**.
 3. You will have to create and maintain throughout the project a **seed file** so you can tear down dirty data everytime you need and repopulate your DB with clean data.
-4. A running **account in Heroku** for your app.
-5. Environment files containing the environment vairables (and these variables in Heroku) both for your server and your React app.
-6. The Heroku command line tools.
+4. Environment files containing the environment variables (and these variables in Heroku) both for your server and your React app.
+5. A running **account in Heroku** for your app and its command line tools.
 
 ## 1. Create your root project
 1. Create your empty project folder
@@ -51,17 +50,18 @@ And then:
 2. In  `mongoose.connect(...)` we must specify the connection string.
 3. Run the script locally.
 
-## Connect to the remote database using Compass
+### Connect to the remote database using Compass
 1. Copy to the clipboard the remote connection string.
 2. Open Compass. Compass will detect that we have the remote connection string the clipboard and will ask whether we want to use it. Answer "YES".
 3. We have to set admin in the Authentication Database field so we are allowed to connect.
    
-## Backend - local environment config
+## 4. Environment variables
+### Backend - local environment config
 1. Install and configure the `dotenv` module. Remember to require the module wherever necesary.
 2. In the `.env` file add the URL to the local database. Also add other variable that we don't wand to have in our repo for safety reasons (credentials, API keys...).
 3. In the server `app.js` add this line **after** all the routes  `app.use((req, res) => {res.sendFile(__dirname + "/public/index.html");});`. You have to place it there so all the routes of your API **are detected first** and **only** if no requested route matches your API then the React app must be served.
 
-## Frontend - local environment config
+### Frontend - local environment config
 1. Confirm that `dotenv-cli` is present in the `client` folder. Otherwise install it via `npm install dotenv-cli`.
 2. Create the two variable files in the root of the `client` folder by issuing in the command line `touch .env.dev .env.prod`.
 3. Write the different environments variables.  También tenemos que añadir otros datos que no queremos quese suban al repositorio y pertenecen al front (credenciales, claves API...)
@@ -76,7 +76,7 @@ And then:
 
 Issue `npm run build-prod` in the `client` folder and move **all the contents** of the `build` folder inside the `public` server folder. You can use this alias to make things easier. `alias cb="rm -rf ./server/public; mkdir ./server/public;  cp  -r ./client/build/. ./server/public"` . You can add this alias to your `~/.zshrc` file so you can use it everytime you launch a new terminal.
 
-## Heroku configuration
+## 5. Heroku setup and Heroku's command line tools install
 
 ## Connect Heroku to the database
 In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string.
@@ -87,7 +87,6 @@ In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all t
 3. Download and install the Heroku command line tools: https://devcenter.Heroku.com/articles/Heroku-cli.
    
 And then:
-
 1. Issue in the terminal `heroku login`.
 2. Add the remote repo to the local repo issuingAñadimos un repositorio remoto al repositorio local con el siguiente comando `Heroku git:remote-a nombre-de-la-app` (we run it in the same folder where is the local repository).
 3. Verify that it has been properly added by issuing `git remote -v`.
