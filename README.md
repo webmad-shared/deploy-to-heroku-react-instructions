@@ -60,7 +60,9 @@ SUBIDA A HEROKU
 
 2- Hacer un push a heroku indicando con el subtree cual es la carpeta donde tiene que mirar. 
 
-HACERDESDE LA RAÍZ DEL PROYECTO $ git subtree push --prefix=server heroku master
+HACERDESDE LA RAÍZ DEL PROYECTO 
+
+$ git subtree push --prefix=server heroku master
 
 1.Ejecutamos  heroku logs  --tail para ver si hay errores.
 2.En la pestaña desplegable  More  si seleccionamos  View logs  podemos seguir el estado deldeploy.
@@ -78,7 +80,13 @@ Vamos a la pestaña  Security  a la opción  IP Whitelist  y pulsamos en  ADD IP
 
 Dentro de  Security , vamos a  MongoDB Users  y creamos un usuario con los permisos  Atlasadmin . Apuntamos las credenciales de ese usuario, pues serán las que usemos paraconectarnos
 
-Vamos a la pestaña  Overview  y pulsamos en  CONNECT . Elegimos  Connect your Application .6.1.Nos aseguramos que el  DRIVER  sea Node y copiamos el texto de  Connection StringOnly.6.2.Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.6.3.En la cadena de conexión, podemos sustituir  test  por el nombre que queramos que tenganuestra base de datos.
+Vamos a la pestaña  Overview  y pulsamos en  CONNECT . Elegimos  Connect your Application .
+
+6.1.Nos aseguramos que el  DRIVER  sea Node y copiamos el texto de  Connection StringOnly.
+
+6.2.Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.
+
+6.3.En la cadena de conexión, podemos sustituir  test  por el nombre que queramos que tenganuestra base de datos.
 
 CON CUENTA
 
@@ -96,7 +104,8 @@ EJECUTAR SEEDS
 
 En el archivo  .env  podemos:1.
 
-1.Modificar la url de la base de datos local por la cadena de conexión remota.1.2.Crear una variable local con la cadena remota, y cambiar la variable enmongoose.connect(...) .
+1.Modificar la url de la base de datos local por la cadena de conexión remota.
+1.2.Crear una variable local con la cadena remota, y cambiar la variable enmongoose.connect(...) .
 2.En  mongoose.connect(...) , ponemos la cadena de conexión.
 3.Ejecutamos el script en local.
 
