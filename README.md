@@ -12,19 +12,19 @@
     1. `.env.dev` -> `REACT_APP_URL=http://localhost:5000/api`
     2. `.env.prod` -> `REACT_APP_URL= https://name-of-your-app.Herokuapp.com/api`
 4. Dentro del archivo `package.json` de la parte de client hay que configurar los scripts:
-```  
+```
     "start": "dotenv -e .env.dev react-scripts start"
     "build-dev": "dotenv -e .env.dev react-scripts build"
     "build-prod": "dotenv -e .env.prod react-scripts build"
 ```
 
-Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de la carpeta build dentro de public de server.
+Hacer `npm run build-prod` en la carpeta de client y mover todo el CONTENIDO de la carpeta build dentro de public de server. You can use this alias to make things easier. `alias cb="rm -rf ./server/public; mkdir ./server/public;  cp  -r ./client/build/. ./server/public"` . You can add this alias to your ~/.zshrc file so you can use it everytime you launch a new terminal.
 
 ## Heroku configuration
 
 ### Without account
 1. Crear cuenta.
-2. Crear app. Región:  Europa 
+2. Crear app. Región: Europa 
 3. Descargar e instalar Heroku CLI: https://devcenter.Heroku.com/articles/Heroku-cli .
 4. Ejecutar en la terminal Heroku login e introducir las credenciales en la ventana del navegador.
 5. Añadimos un repositorio remoto al repositorio local con el siguiente comando Heroku `git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
@@ -44,10 +44,10 @@ Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de
 `git subtree push --prefix=server Heroku master`
 
 1. Ejecutamos `heroku logs  --tail` para ver si hay errores.
-2. En la pestaña desplegable  More  si seleccionamos  View logs  podemos seguir el estado deldeploy.
+2. En la pestaña desplegable More si seleccionamos View logs podemos seguir el estado deldeploy.
 
 ## Deploy to the database (MongoDB Atlas)
-NOTA : en la learning nos explica cómo hacer la subida a  Mlab , pero debido a que MongoDB haadquirido Mlab, ya no están admitiendo nuevas altas de usuarios.
+NOTA : en la learning nos explica cómo hacer la subida a Mlab, pero debido a que MongoDB ha adquirido Mlab, ya no están admitiendo nuevas altas de usuarios.
 
 ### Without account
 1. Vamos a https://www.mongodb.com/cloud/atlas/register  y creamos una cuenta.
@@ -81,6 +81,3 @@ En Heroku, vamos a la pestaña Settings y pulsamos en  Reveal Config Vars. Cream
 1. Copiamos al portapapeles la cadena de conexión remota.
 2. Abrimos Compass. Compass detectará que tenemos la cadena de conexión en el portapapeles y nos preguntará si queremos usarla. Decimos que sí
 3. Tenemos que poner  admin en el campo  Authentication Database  para que nos deje conectar.
-
-
-`alias cb="rm -rf ./server/public; mkdir ./server/public;  cp  -r ./client/build/. ./server/public"`
