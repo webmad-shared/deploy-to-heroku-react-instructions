@@ -6,15 +6,15 @@
 3. En app.js poner antes del module.exports cual es el index que tiene que enviar  `app.use((req, res) => {res.sendFile(__dirname + "/public/index.html");});`
 
 ## CLIENT(FRONT)- CONFIGURACIÓN DEL ENTORNO LOCAL
-1. Confirmar que está instalado el dotenv-cli en la carpeta client. De lo contrario instalarlo: `npm install dotenv-cli`.
+1. Confirmar que está instalado el `dotenv-cli` en la carpeta client. De lo contrario instalarlo: `npm install dotenv-cli`.
 2. Crear los dos ficheros de variables de entorno en la raíz de la carpeta client: `touch .env.dev .env.prod`
 3. Poner las variables de entornos.  También tenemos que añadir otros datos que no queremos quese suban al repositorio y pertenecen al front (credenciales, claves API...)
-    1. .env.dev -> `REACT_APP_URL=http://localhost:5000/api`
-    2. .env.prod -> `REACT_APP_URL= https://name-of-your-app.Herokuapp.com/api`
-4. Dentro del archivo package.json de la parte de client hay que configurar los scripts:     
+    1. `.env.dev` -> `REACT_APP_URL=http://localhost:5000/api`
+    2. `.env.prod` -> `REACT_APP_URL= https://name-of-your-app.Herokuapp.com/api`
+4. Dentro del archivo `package.json` de la parte de client hay que configurar los scripts:     
 `"start": "dotenv -e .env.dev react-scripts start"     "build-dev": "dotenv -e .env.dev react-scripts build"     "build-prod": "dotenv -e .env.prod react-scripts build"`
 
-Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de la carpeta builddentro de public de server .
+Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de la carpeta build dentro de public de server.
 
 ## CONFIGURACIÓN DE HEROKU
 
@@ -24,7 +24,7 @@ Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de
 3. Descargar e instalar Heroku CLI: https://devcenter.Heroku.com/articles/Heroku-cli .
 4. Ejecutar en la terminal Heroku login e introducir las credenciales en la ventana del navegador.
 5. Añadimos un repositorio remoto al repositorio local con el siguiente comando Heroku `git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
-6. Comprobamos que lo ha añadido correctamente ejecutando git remote -v
+6. Comprobamos que lo ha añadido correctamente ejecutando `**git remote -v**`
 
 ### CON CUENTA
 1. Ejecutar en la terminal Heroku login.
