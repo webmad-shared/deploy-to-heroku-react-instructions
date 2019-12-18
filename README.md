@@ -25,9 +25,9 @@
 
 Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de la carpeta builddentro de public de server .
 
-##CONFIGURACIÓN DE HEROKU
+## CONFIGURACIÓN DE HEROKU
 
-###SIN CUENTA
+### SIN CUENTA
 
 1.Crear cuenta.
 
@@ -39,14 +39,14 @@ Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de
 -a nombre-de-la-app (lo ejecutamos en la misma carpeta donde está el repositorio local).
 6. Comprobamos que lo ha añadido correctamente ejecutando git remote -v
 
-###CON CUENTA
+### CON CUENTA
 
 1. Ejecutar en la terminal heroku login.
 2. Añadimos un repositorio remoto al repositorio local con el siguiente comando `heroku git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
 3. Comprobamos que lo ha añadido correctamente ejecutando `git remote -v`
 4. Guardar variables de entorno necesarias en heroku
 
-##SUBIDA A HEROKU
+## SUBIDA A HEROKU
 
 1- Guardar los cambios con    
     `$ git add .    $ git commit -m ‘mensaje’`
@@ -60,11 +60,11 @@ HACER DESDE LA RAÍZ DEL PROYECTO
 1.Ejecutamos `heroku logs  --tail` para ver si hay errores.
 2.En la pestaña desplegable  More  si seleccionamos  View logs  podemos seguir el estado deldeploy.
 
-##DESPLEGAR BASE DE DATOS (MongoDB Atlas)
+## DESPLEGAR BASE DE DATOS (MongoDB Atlas)
 
 NOTA : en la learning nos explica cómo hacer la subida a  Mlab , pero debido a que MongoDB haadquirido Mlab, ya no están admitiendo nuevas altas de usuarios.
 
-###SIN CUENTA
+### SIN CUENTA
 
 1. Vamos a https://www.mongodb.com/cloud/atlas/register  y creamos una cuenta.
 
@@ -76,14 +76,11 @@ NOTA : en la learning nos explica cómo hacer la subida a  Mlab , pero debido a 
 5. Dentro de  Security , vamos a  MongoDB Users  y creamos un usuario con los permisos  Atlasadmin . Apuntamos las credenciales de ese usuario, pues serán las que usemos paraconectarnos
 
 6. Vamos a la pestaña  Overview  y pulsamos en  CONNECT . Elegimos  Connect your Application .
+   1. Nos aseguramos que el  DRIVER  sea Node y copiamos el texto de  Connection StringOnly.
+   2. Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.
+   3. En la cadena de conexión, podemos sustituir  test  por el nombre que queramos que tenganuestra base de datos.
 
-6.1. Nos aseguramos que el  DRIVER  sea Node y copiamos el texto de  Connection StringOnly.
-
-6.2. Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.
-
-6.3. En la cadena de conexión, podemos sustituir  test  por el nombre que queramos que tenganuestra base de datos.
-
-###CON CUENTA
+### CON CUENTA
 
 1. Accedemos con nuestra cuenta y en la pestaña  Collections  pulsamos el boton de  CreateDatabase  y nos creamos la nueva base de datos
 
@@ -92,13 +89,12 @@ NOTA : en la learning nos explica cómo hacer la subida a  Mlab , pero debido a 
    2. b. Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.
    3. c. En la cadena de conexión, debemos sustituir  test  por el nombre que le dimos a la basede datos creada
 
-
-##CONECTAR HEROKU CON LA BASE DE DATOS
+## CONECTAR HEROKU CON LA BASE DE DATOS
 
 En Heroku, vamos a la pestaña  Settings  y pulsamos en  Reveal Config Vars . Creamos una variable con elmismo nombre que la variable que creamos para la base de datos en el fichero `.env`  y pegamos lacadena de conexión. También tenemos que crear variables para el resto de variables que tengamos en el `.env`.
 
 
-EJECUTAR SEEDS
+## EJECUTAR SEEDS
 
 1. En el archivo .env podemos:
    1. Modificar la url de la base de datos local por la cadena de conexión remota.
@@ -106,7 +102,7 @@ EJECUTAR SEEDS
 2. En  mongoose.connect(...) , ponemos la cadena de conexión.
 3. Ejecutamos el script en local.
 
-##CONECTAR A LA BBDD REMOTA CON COMPASS
+## CONECTAR A LA BBDD REMOTA CON COMPASS
 
 1. Copiamos al portapapeles la cadena de conexión remota.
 2. Abrimos Compass. Compass detectará que tenemos la cadena de conexión en el portapapeles ynos preguntará si queremos usarla. Decimos que sí
