@@ -78,7 +78,7 @@ Issue `npm run build-prod` in the `client` folder and move **all the contents** 
 
 ## 5. Heroku setup and Heroku's command line tools install
 
-## Connect Heroku to the database
+### Connect Heroku to the database
 In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string.
 
 ### Creating an account
@@ -92,7 +92,7 @@ And then:
 3. Verify that it has been properly added by issuing `git remote -v`.
 4. Save the necesary environment variables in Heroku.
 
-## Deploy to Heroku
+### Deploy to Heroku
 1. Commit your changes by issuing `git add .; git commit -m 'your commit message'`.
 2. Make a push to Heroku specifying with the `subtree` flag which folder has to look for.
 
