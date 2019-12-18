@@ -24,7 +24,7 @@ Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de
 3. Descargar e instalar Heroku CLI: https://devcenter.Heroku.com/articles/Heroku-cli .
 4. Ejecutar en la terminal Heroku login e introducir las credenciales en la ventana del navegador.
 5. Añadimos un repositorio remoto al repositorio local con el siguiente comando Heroku `git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
-6. Comprobamos que lo ha añadido correctamente ejecutando `**git remote -v**`
+6. Comprobamos que lo ha añadido correctamente ejecutando `git remote -v`
 
 ### With account
 1. Ejecutar en la terminal Heroku login.
@@ -36,7 +36,7 @@ Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de
 1. Guardar los cambios con `git add .; git commit -m 'mensaje'`
 2. Hacer un push a Heroku indicando con el subtree cual es la carpeta donde tiene que mirar. 
 
-**HACER DESDE LA RAÍZ DEL PROYECTO **
+**HACER DESDE LA RAÍZ DEL PROYECTO**
 `git subtree push --prefix=server Heroku master`
 
 1. Ejecutamos `Heroku logs  --tail` para ver si hay errores.
