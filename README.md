@@ -53,7 +53,7 @@ Issue `npm run build-prod` in the `client` folder and move **all the contents** 
 1. Commit your changes by issuing `git add .; git commit -m 'mensaje'`.
 2. Make a push to Heroku specifying with the `subtree` flag which folder has to look for.
 
-**From your project's root folder:** `git subtree push --prefix=server Heroku master`
+**From your project's root folder:** `git subtree push --prefix=server heroku master`
 
 1. Issue `heroku logs  --tail` to check for errors.
 2. En la pestaña desplegable More si seleccionamos View logs podemos seguir el estado del deploy.
@@ -62,30 +62,30 @@ Issue `npm run build-prod` in the `client` folder and move **all the contents** 
 NOTA : en la learning nos explica cómo hacer la subida a Mlab, pero debido a que MongoDB ha adquirido Mlab, ya no están admitiendo nuevas altas de usuarios.
 
 ### Without account
-1. Vamos a https://www.mongodb.com/cloud/atlas/register  y creamos una cuenta.
-2. Elegimos un servidor que esté en europa y sea gratuito.
-3. Si nos sale un asistente  Get Started  pulsamos en  No Thanks!.
+1. Visit https://www.mongodb.com/cloud/atlas/register and create an account.
+2. Choose a server that is in Europe and that is free.
+3. If you see an assistant "Get Started" click the "No Thanks!" button.
 4. Vamos a la pestaña Security a la opción  `IP Whitelist`  y pulsamos en  ADD IP ADDRESS. Marcamos la opción `Allow access` from Anywhere.
-5. Dentro de  Security, vamos a  MongoDB Users  y creamos un usuario con los permisos  Atlasadmin. Apuntamos las credenciales de ese usuario, pues serán las que usemos para conectarnos.
+5. Inside of "Security", navigate to "MongoDB Users" and create an user with the Atlasadmin permissions. Write down the credentials as these will be ones used to connect later on.
 6. Vamos a la pestaña  Overview  y pulsamos en  CONNECT . Elegimos Connect your Application .
    1. Nos aseguramos que el DRIVER sea Node y copiamos el texto de Connection StringOnly.
    2. Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.
    3. En la cadena de conexión, podemos sustituir test por el nombre que queramos que tenga nuestra base de datos.
 
 ### With account
-1. Accedemos con nuestra cuenta y en la pestaña  Collections  pulsamos el boton de  CreateDatabase  y nos creamos la nueva base de datos.
-2. Vamos a la pestaña  Overview  y pulsamos en  CONNECT . Elegimos  Connect your Application .
-   1. Nos aseguramos que el  DRIVER  sea Node y copiamos el texto de  Connection StringOnly.
-   2. Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.
-   3. En la cadena de conexión, debemos sustituir test por el nombre que le dimos a la basede datos creada.
+1. Access with you account and in the "Collections" tab press the button "Create Database" and create a new database.
+2. Navigate to the "Overview" tab and press "CONNECT". Choose "Connect your Application".
+   1. Ensure that the DRIVER is Node and copy the text "Connection String Only".
+   2. Store the connection string. Be sure that you substitute the password with the real password you specified.
+   3. In the connection string substitute `test` with the name we gave to the created database.
 
 ## Connect Heroku to the database
-En Heroku, vamos a la pestaña Settings y pulsamos en  Reveal Config Vars. Creamos una variable con el mismo nombre que la variable que creamos para la base de datos en el fichero `.env` y pegamos lacadena de conexión. También tenemos que crear variables para el resto de variables que tengamos en el `.env`.
+In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string.
 
 ## Run the seeds
-1. In the `.env` file we can:
-   1. Modificar la url de la base de datos local por la cadena de conexión remota.
-   2. Crear una variable local con la cadena remota, y cambiar la variable en `mongoose.connect(...)`.
+1. In the `.env` file we must:
+   1. Replace the local database url with the remote database connection string.
+   2. Create a local variable with the remote database connection string and place it inside the `mongoose.connect(...)`.
 2. In  `mongoose.connect(...)` we must specify the connection string.
 3. Run the script locally.
 
