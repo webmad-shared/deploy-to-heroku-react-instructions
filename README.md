@@ -31,7 +31,7 @@ In order to deploy to Heroku your React app there will be some elements you will
     "build-prod": "dotenv -e .env.prod react-scripts build"
 ```
 
-Issue `npm run build-prod` in the `client` folder and move **all the contents of the `build` folder** inside the `public` server folder. You can use this alias to make things easier. `alias cb="rm -rf ./server/public; mkdir ./server/public;  cp  -r ./client/build/. ./server/public"` . You can add this alias to your `~/.zshrc` file so you can use it everytime you launch a new terminal.
+Issue `npm run build-prod` in the `client` folder and move **all the contents** of the `build` folder inside the `public` server folder. You can use this alias to make things easier. `alias cb="rm -rf ./server/public; mkdir ./server/public;  cp  -r ./client/build/. ./server/public"` . You can add this alias to your `~/.zshrc` file so you can use it everytime you launch a new terminal.
 
 ## Heroku configuration
 
