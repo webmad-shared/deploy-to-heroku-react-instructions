@@ -38,25 +38,24 @@ Issue `npm run build-prod` in the `client` folder and move **all the contents** 
 ### Without account
 1. Create account.
 2. Create app. Region: Europe.
-3. Descargar e instalar Heroku CLI: https://devcenter.Heroku.com/articles/Heroku-cli.
-4. Ejecutar en la terminal Heroku login e introducir las credenciales en la ventana del navegador.
+3. Download and install the Heroku command line tools: https://devcenter.Heroku.com/articles/Heroku-cli.
+4. Issue in the terminal `heroku login` and write your credentials in the automatically opened browser window.
 5. Añadimos un repositorio remoto al repositorio local con el siguiente comando Heroku `git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
-6. Comprobamos que lo ha añadido correctamente ejecutando `git remote -v`.
+6. Verify that this new remote has correctly been added issuing `git remote -v`.
 
 ### With account
-1. Ejecutar en la terminal Heroku login.
+1. Issue in the terminal `heroku login`.
 2. Añadimos un repositorio remoto al repositorio local con el siguiente comando `Heroku git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
 3. Comprobamos que lo ha añadido correctamente ejecutando `git remote -v`.
-4. Guardar variables de entorno necesarias en Heroku.
+4. Save the necesary environment variables in Heroku.
 
 ## Deploy to Heroku
-1. Guardar los cambios con `git add .; git commit -m 'mensaje'`.
-2. Hacer un push a Heroku indicando con el subtree cual es la carpeta donde tiene que mirar. 
+1. Commit your changes by issuing `git add .; git commit -m 'mensaje'`.
+2. Make a push to Heroku specifying with the `subtree` flag which folder has to look for.
 
-**HACER DESDE LA RAÍZ DEL PROYECTO**
-`git subtree push --prefix=server Heroku master`
+**From your project's root folder:** `git subtree push --prefix=server Heroku master`
 
-1. Ejecutamos `heroku logs  --tail` para ver si hay errores.
+1. Issue `heroku logs  --tail` to check for errors.
 2. En la pestaña desplegable More si seleccionamos View logs podemos seguir el estado del deploy.
 
 ## Deploy to the database (MongoDB Atlas)
