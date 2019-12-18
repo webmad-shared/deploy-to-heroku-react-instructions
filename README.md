@@ -40,7 +40,7 @@ Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de
 **HACER DESDE LA RAÍZ DEL PROYECTO**
 `git subtree push --prefix=server Heroku master`
 
-1. Ejecutamos `Heroku logs  --tail` para ver si hay errores.
+1. Ejecutamos `heroku logs  --tail` para ver si hay errores.
 2. En la pestaña desplegable  More  si seleccionamos  View logs  podemos seguir el estado deldeploy.
 
 ## Deploy to the database (MongoDB Atlas)
