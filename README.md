@@ -23,6 +23,8 @@ In order to deploy to Heroku your React app there will be some elements you will
 
 Now you have the basic skeleton for your project commited and you are now ready to start coding.
 
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture1.png" alt="">
+
 ## 2. Database setup in MongoDB Atlas
 We will be using MongoDB Atlas for this project. More info at https://www.mongodb.com/cloud/atlas/ 
 
