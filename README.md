@@ -1,4 +1,4 @@
-# Deploy to Heroku: React instructions
+# Deploy to Heroku of a React based project
 
 The purpose of this document is to explain how to deploy the MERN application you have created for your third project to Heroku.
 
