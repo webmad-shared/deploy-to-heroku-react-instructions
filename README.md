@@ -2,6 +2,12 @@
 
 The purpose of this document is to explain how to deploy the MERN application you have created for your third project to Heroku.
 
+In order to do that there are several elements you have to consider:
+
+1. You must have in your project root folder two folders inside
+   1. `server`. This will contain your backend using Express, Mongoose models, etc.
+   2. `client`. This will contain your React app.
+
 ## Backend - local environment config
 1. Instalar y configurar el módulo `dotenv` . Acordaos de requerir el módulo donde sea necesario.
 2. En el fichero `.env`, añadir la URL de la base de datos local. También tenemos que añadir otrosdatos que no queremos que se suban al repositorio (credenciales, claves API...).
