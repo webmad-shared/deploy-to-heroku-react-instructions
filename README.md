@@ -23,7 +23,7 @@ In order to deploy to Heroku your React app there will be some elements you will
 
 Now you have the basic skeleton for your project commited and you are now ready to start coding.
 
-<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture1.png" alt="">
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture0.png" alt="">
 
 ## 2. Database setup in MongoDB Atlas
 We will be using MongoDB Atlas for this project. More info at https://www.mongodb.com/cloud/atlas/ 
@@ -33,16 +33,30 @@ In order to make things right, we will start this documentation by creating your
 ### Creating an account
 1. Visit https://www.mongodb.com/cloud/atlas/register and create an account.
 2. Choose a server that is in Europe and that is free.
+
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture4.png" alt="">
+
 3. If you see an assistant "Get Started" click the "No Thanks!" button.
-4. Go to the security tab. Then in the security tab choose `IP Whitelist` and select "ADD IP ADDRESS". Marcamos la opción `Allow access` from Anywhere.
-5. Inside of "Security", navigate to "MongoDB Users" and create an user with the Atlasadmin permissions. Write down the credentials as these will be ones used to connect later on.
+
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture5.png" alt="">
+
+1. Go to the security tab. Then in the security tab choose `IP Whitelist` and select "ADD IP ADDRESS". Marcamos la opción "Allow access from Anywhere".
+
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture6.png" alt="">
+
+2. Inside of "Security", navigate to "MongoDB Users" and create an user with the Atlasadmin permissions. Write down the credentials as these will be ones used to connect later on.
+
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture7.png" alt="">
 
 And then:
 1. Access with you account and in the "Collections" tab press the button "Create Database" and create a new database.
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture9.png" alt="">
 2. Navigate to the "Overview" tab and press "CONNECT". Choose "Connect your Application".
    1. Ensure that the DRIVER is Node and copy the text "Connection String Only".
    2. Store the connection string. Be sure that you substitute the password with the real password you specified.
    3. In the connection string substitute `test` with the name we gave to the created database.
+
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture8.png" alt="">
 
 ## 3. Run the seeds
 1. In the `.env` file we must:
@@ -85,6 +99,8 @@ Create a new app in Heroku using the credentials you used in the last project.
 1. Create account.
 2. Create app. Region: Europe.
 3. Download and install the Heroku command line tools: https://devcenter.Heroku.com/articles/Heroku-cli.
+
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture1.png" alt="">
    
 And then:
 1. Issue in the terminal `heroku login`.
@@ -92,10 +108,14 @@ And then:
 3. Verify that it has been properly added by issuing `git remote -v`.
 4. In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string too.
 
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture9.png" alt="">
+
 ### Deploy to Heroku
 1. Commit your changes by issuing `git add .; git commit -m 'your commit message'`.
 2. Make a push to Heroku specifying with the `subtree` flag which folder has to look for.
 
 **From your project's root folder:** `git subtree push --prefix=server heroku master`
 
-Issue `heroku logs  --tail` to check for errors.
+Issue `heroku logs  --tail` to check for errors or via the Heroku logs in its website.
+
+<img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture2.png" alt="">
