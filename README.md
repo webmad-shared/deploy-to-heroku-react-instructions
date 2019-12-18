@@ -12,8 +12,9 @@
     1. `.env.dev` -> `REACT_APP_URL=http://localhost:5000/api`
     2. `.env.prod` -> `REACT_APP_URL= https://name-of-your-app.Herokuapp.com/api`
 4. Dentro del archivo `package.json` de la parte de client hay que configurar los scripts:     
-`"start": "dotenv -e .env.dev react-scripts start"
-"build-dev": "dotenv -e .env.dev react-scripts build"     "build-prod": "dotenv -e .env.prod react-scripts build"`
+    "start": "dotenv -e .env.dev react-scripts start"
+    "build-dev": "dotenv -e .env.dev react-scripts build"
+    "build-prod": "dotenv -e .env.prod react-scripts build"
 
 Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de la carpeta build dentro de public de server.
 
@@ -78,3 +79,6 @@ En Heroku, vamos a la pestaña Settings y pulsamos en  Reveal Config Vars. Cream
 1. Copiamos al portapapeles la cadena de conexión remota.
 2. Abrimos Compass. Compass detectará que tenemos la cadena de conexión en el portapapeles y nos preguntará si queremos usarla. Decimos que sí
 3. Tenemos que poner  admin en el campo  Authentication Database  para que nos deje conectar.
+
+
+`alias cb="rm -rf ./server/public; mkdir ./server/public;  cp  -r ./client/build/. ./server/public"`
