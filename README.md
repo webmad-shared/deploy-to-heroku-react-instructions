@@ -1,5 +1,7 @@
 # Deploy to Heroku: React instructions
 
+The purpose of this document is to explain how to deploy the MERN application you have created for your third project to Heroku.
+
 ## Backend - local environment config
 1. Instalar y configurar el módulo `dotenv` . Acordaos de requerir el módulo donde sea necesario.
 2. En el fichero `.env`, añadir la URL de la base de datos local. También tenemos que añadir otrosdatos que no queremos que se suban al repositorio (credenciales, claves API...).
