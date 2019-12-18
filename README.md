@@ -16,7 +16,6 @@ In order to deploy to Heroku your React app there will be some elements you will
 6. The Heroku command line tools.
 
 ## 1. Create your root project
-
 1. Create your empty project folder
 2. Issue `git init` so you initialize control version with git for your project.
 3. Create the `server` folder using `irongenerate server`
@@ -30,28 +29,22 @@ We will be using MongoDB Atlas for this project. More info at https://www.mongod
 
 In order to make things right, we will start this documentation by creating your project's database, populate it with your seed's data (next chapter of this document) and setting it up as the default DB for both your local and Heroku project.
 
-### Without account
+### Creating an account
 1. Visit https://www.mongodb.com/cloud/atlas/register and create an account.
 2. Choose a server that is in Europe and that is free.
 3. If you see an assistant "Get Started" click the "No Thanks!" button.
 4. Go to the security tab. Then in the security tab choose `IP Whitelist` and select "ADD IP ADDRESS". Marcamos la opción `Allow access` from Anywhere.
 5. Inside of "Security", navigate to "MongoDB Users" and create an user with the Atlasadmin permissions. Write down the credentials as these will be ones used to connect later on.
-6. Navigate to the "Overview" tab and press "CONNECT". Choose "Connect your Application".
-   1. Ensure that the DRIVER is Node and copy the text "Connection String Only".
-   2. Store the connection string. Be sure that you substitute the password with the real password you specified.
-   3. In the connection string substitute `test` with the name we gave to the created database
 
-### With account
+And then:
+
 1. Access with you account and in the "Collections" tab press the button "Create Database" and create a new database.
 2. Navigate to the "Overview" tab and press "CONNECT". Choose "Connect your Application".
    1. Ensure that the DRIVER is Node and copy the text "Connection String Only".
    2. Store the connection string. Be sure that you substitute the password with the real password you specified.
    3. In the connection string substitute `test` with the name we gave to the created database.
 
-## Connect Heroku to the database
-In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string.
-
-## Run the seeds
+## 3. Run the seeds
 1. In the `.env` file we must:
    1. Replace the local database url with the remote database connection string.
    2. Create a local variable with the remote database connection string and place it inside the `mongoose.connect(...)`.
@@ -85,26 +78,25 @@ Issue `npm run build-prod` in the `client` folder and move **all the contents** 
 
 ## Heroku configuration
 
-### Without account
+## Connect Heroku to the database
+In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string.
+
+### Creating an account
 1. Create account.
 2. Create app. Region: Europe.
 3. Download and install the Heroku command line tools: https://devcenter.Heroku.com/articles/Heroku-cli.
-4. Issue in the terminal `heroku login` and write your credentials in the automatically opened browser window.
-5. Añadimos un repositorio remoto al repositorio local con el siguiente comando Heroku `git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
-6. Verify that this new remote has correctly been added issuing `git remote -v`.
+   
+And then:
 
-### With account
 1. Issue in the terminal `heroku login`.
-2. Añadimos un repositorio remoto al repositorio local con el siguiente comando `Heroku git:remote-a nombre-de-la-app` (lo ejecutamos en la misma carpeta donde está el repositorio local).
-3. Comprobamos que lo ha añadido correctamente ejecutando `git remote -v`.
+2. Add the remote repo to the local repo issuingAñadimos un repositorio remoto al repositorio local con el siguiente comando `Heroku git:remote-a nombre-de-la-app` (we run it in the same folder where is the local repository).
+3. Verify that it has been properly added by issuing `git remote -v`.
 4. Save the necesary environment variables in Heroku.
 
 ## Deploy to Heroku
-1. Commit your changes by issuing `git add .; git commit -m 'mensaje'`.
+1. Commit your changes by issuing `git add .; git commit -m 'your commit message'`.
 2. Make a push to Heroku specifying with the `subtree` flag which folder has to look for.
 
 **From your project's root folder:** `git subtree push --prefix=server heroku master`
 
-1. Issue `heroku logs  --tail` to check for errors.
-2. En la pestaña desplegable More si seleccionamos View logs podemos seguir el estado del deploy.
-
+Issue `heroku logs  --tail` to check for errors.
