@@ -65,7 +65,7 @@ Try to have only one seed file that you can run right away and that populates al
    1. Replace the local database url with the remote database connection string.
    2. Create a local variable with the remote database connection string and place it inside the `mongoose.connect(...)`.
 2. In  `mongoose.connect(...)` we must specify the connection string.
-3. Now that you have setup your seed in connection to your remote database, you can run the seed in your computer in order to populate your database and refresh the data in it.
+3. Now that you have setup your seed in connection to your remote database, you can run the seed in your computer in order to populate your database and refresh the data in it everytime you need. You can do it via issuing `node bin/www/seed.js`.
 
 ### Connect to the remote database using Compass
 1. Copy to the clipboard the remote connection string.
