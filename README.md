@@ -47,7 +47,7 @@ And then:
    1. Replace the local database url with the remote database connection string.
    2. Create a local variable with the remote database connection string and place it inside the `mongoose.connect(...)`.
 2. In  `mongoose.connect(...)` we must specify the connection string.
-3. Run the script locally.
+3. Now that you have setup your seed in connection to your remote database, you can run the seed in your computer in order to populate your database and refresh the data in it.
 
 ### Connect to the remote database using Compass
 1. Copy to the clipboard the remote connection string.
@@ -77,8 +77,7 @@ Issue `npm run build-prod` in the `client` folder and move **all the contents** 
 
 ## 5. Heroku setup and Heroku's command line tools install
 
-### Connect Heroku to the database
-In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string.
+Create a new app in Heroku using the credentials you used in the last project.
 
 ### Creating an account
 1. Create account.
@@ -89,7 +88,7 @@ And then:
 1. Issue in the terminal `heroku login`.
 2. Add the remote repo to the local repo issuingAñadimos un repositorio remoto al repositorio local con el siguiente comando `Heroku git:remote-a nombre-de-la-app` (we run it in the same folder where is the local repository).
 3. Verify that it has been properly added by issuing `git remote -v`.
-4. Save the necesary environment variables in Heroku.
+4. In Heroku, visit the "Settings" tab and press "Reveal Config Vars". Create all the variables of your `.env` file and remember to paste the Mongo Atlas connection string too.
 
 ### Deploy to Heroku
 1. Commit your changes by issuing `git add .; git commit -m 'your commit message'`.
