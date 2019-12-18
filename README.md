@@ -58,7 +58,9 @@ And then:
 
 <img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture8.png" alt="">
 
-## 3. Run the seeds
+## 3. Run the seed file
+Try to have only one seed file that you can run right away and that populates all your MongoDB collections and make it live in the `bin/www` folder.
+
 1. In the `.env` file we must:
    1. Replace the local database url with the remote database connection string.
    2. Create a local variable with the remote database connection string and place it inside the `mongoose.connect(...)`.
