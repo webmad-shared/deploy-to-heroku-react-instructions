@@ -16,7 +16,7 @@ In order to deploy to Heroku your React app there will be some elements you will
 ## Backend - local environment config
 1. Install and configure the `dotenv` module. Remember to require the module wherever necesary.
 2. In the `.env` file add the URL to the local database. Also add other variable that we don't wand to have in our repo for safety reasons (credentials, API keys...).
-3. In the server `app.js` add this line **after** all the routes  `app.use((req, res) => {res.sendFile(__dirname + "/public/index.html");});`. You have to place it there so all the routes of your API are detected first and only if no requested route matches your API then the React app must be served.
+3. In the server `app.js` add this line **after** all the routes  `app.use((req, res) => {res.sendFile(__dirname + "/public/index.html");});`. You have to place it there so all the routes of your API **are detected first** and **only** if no requested route matches your API then the React app must be served.
 
 ## Frontend - local environment config
 1. Confirm that `dotenv-cli` is present in the `client` folder. Otherwise install it via `npm install dotenv-cli`.
