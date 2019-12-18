@@ -15,13 +15,13 @@ In order to deploy to Heroku your React app there will be some elements you will
    
 ## Backend - local environment config
 1. Install and configure the `dotenv` module. Remember to require the module wherever necesary.
-2. En el fichero `.env`, añadir la URL de la base de datos local. También tenemos que añadir otrosdatos que no queremos que se suban al repositorio (credenciales, claves API...).
+2. In the `.env` file add the URL to the local database. Also add other variable that we don't wand to have in our repo for safety reasons (credentials, API keys...).
 3. En app.js poner antes del module.exports cual es el index que tiene que enviar  `app.use((req, res) => {res.sendFile(__dirname + "/public/index.html");});`
 
 ## Frontend - local environment config
-1. Confirmar que está instalado el `dotenv-cli` en la carpeta client. De lo contrario instalarlo: `npm install dotenv-cli`.
-2. Crear los dos ficheros de variables de entorno en la raíz de la carpeta client: `touch .env.dev .env.prod`
-3. Poner las variables de entornos.  También tenemos que añadir otros datos que no queremos quese suban al repositorio y pertenecen al front (credenciales, claves API...)
+1. Confirm that `dotenv-cli` is present in the `client` folder. Otherwise install it via `npm install dotenv-cli`.
+2. Create the two variable files in the root of the `client` folder by issuing in the command line `touch .env.dev .env.prod`.
+3. Write the different environments variables.  También tenemos que añadir otros datos que no queremos quese suban al repositorio y pertenecen al front (credenciales, claves API...)
     1. `.env.dev` -> `REACT_APP_URL=http://localhost:5000/api`
     2. `.env.prod` -> `REACT_APP_URL= https://name-of-your-app.Herokuapp.com/api`
 4. Inside of the `package.json` file in the client part we have to configure these scripts:
@@ -84,13 +84,13 @@ NOTA : en la learning nos explica cómo hacer la subida a Mlab, pero debido a qu
 En Heroku, vamos a la pestaña Settings y pulsamos en  Reveal Config Vars. Creamos una variable con el mismo nombre que la variable que creamos para la base de datos en el fichero `.env` y pegamos lacadena de conexión. También tenemos que crear variables para el resto de variables que tengamos en el `.env`.
 
 ## Run the seeds
-1. En el archivo `.env` podemos:
+1. In the `.env` file we can:
    1. Modificar la url de la base de datos local por la cadena de conexión remota.
    2. Crear una variable local con la cadena remota, y cambiar la variable en `mongoose.connect(...)`.
-2. En  `mongoose.connect(...)` ponemos la cadena de conexión.
-3. Ejecutamos el script en local.
+2. In  `mongoose.connect(...)` we must specify the connection string.
+3. Run the script locally.
 
 ## Connect to the remote database using Compass
-1. Copiamos al portapapeles la cadena de conexión remota.
-2. Abrimos Compass. Compass detectará que tenemos la cadena de conexión en el portapapeles y nos preguntará si queremos usarla. Decimos que sí.
-3. Tenemos que poner admin en el campo Authentication Database para que nos deje conectar.
+1. Copy to the clipboard the remote connection string.
+2. Open Compass. Compass will detect that we have the remote connection string the clipboard and will ask whether we want to use it. Answer "YES".
+3. We have to set admin in the Authentication Database field so we are allowed to connect.
