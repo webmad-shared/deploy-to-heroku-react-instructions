@@ -36,7 +36,6 @@ In order to make things right, we will start this documentation by creating your
 5. Inside of "Security", navigate to "MongoDB Users" and create an user with the Atlasadmin permissions. Write down the credentials as these will be ones used to connect later on.
 
 And then:
-
 1. Access with you account and in the "Collections" tab press the button "Create Database" and create a new database.
 2. Navigate to the "Overview" tab and press "CONNECT". Choose "Connect your Application".
    1. Ensure that the DRIVER is Node and copy the text "Connection String Only".
