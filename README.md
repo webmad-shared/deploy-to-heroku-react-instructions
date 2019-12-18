@@ -2,34 +2,44 @@
 
 The purpose of this document is to explain how to deploy the MERN application you have created for your third project to Heroku.
 
-At some point specified by your lead teacher, you will have to upload your project to Heroku. After running all the required steps you will find that republishing your latest changes is very easy. Remember that after deploying you will continue working locally and only when your implementations are finished and stable you will redeploy.
+At some point specified by your lead teacher, you will have to upload your MERN third project to Heroku. Good news are that after running all the required steps you will find that republishing your latest changes is very easy. Remember that after deploying you will continue working locally and only when your new features are finished and stable you will have to redeploy to see your latest changes online.
 
 In order to deploy to Heroku your React app there will be some elements you will have to take into account:
 
 1. The project root folder **must have** two folders inside
    1. `server`. This will contain your backend using Express, Mongoose models, etc.
    2. `client`. This will contain your React app.
-2. You will have to create a **seed file** so you can tear down dirty data everytime you need and repopulate your DB with clean data.
-3. A **your database running in MongoDB Atlas**.
+2. A **your database running in MongoDB Atlas**.
+3. You will have to create and maintain throughout the project a **seed file** so you can tear down dirty data everytime you need and repopulate your DB with clean data.
 4. A running **account in Heroku** for your app.
 5. Environment files containing the environment vairables (and these variables in Heroku) both for your server and your React app.
 6. The Heroku command line tools.
 
-## Database setup in MongoDB Atlas
+## 1. Create your root project
+
+1. Create your empty project folder
+2. Issue `git init` so you initialize control version with git for your project.
+3. Create the `server` folder using `irongenerate server`
+4. Create the `client` folder using `npx create-react-app client`
+5. In the root folder issue a `git add .` and then `git commit -m "first commit"`
+
+Now you have the basic skeleton for your project commited and you are now ready to start coding.
+
+## 2. Database setup in MongoDB Atlas
 We will be using MongoDB Atlas for this project. More info at https://www.mongodb.com/cloud/atlas/ 
 
-In order to make things right, we will start this documentation by creating your project's database, populate it with your seed's data and setting it up as the default db for both your local and Heroku project.
+In order to make things right, we will start this documentation by creating your project's database, populate it with your seed's data (next chapter of this document) and setting it up as the default DB for both your local and Heroku project.
 
 ### Without account
 1. Visit https://www.mongodb.com/cloud/atlas/register and create an account.
 2. Choose a server that is in Europe and that is free.
 3. If you see an assistant "Get Started" click the "No Thanks!" button.
-4. Vamos a la pestaña Security a la opción  `IP Whitelist`  y pulsamos en  ADD IP ADDRESS. Marcamos la opción `Allow access` from Anywhere.
+4. Go to the security tab. Then in the security tab choose `IP Whitelist` and select "ADD IP ADDRESS". Marcamos la opción `Allow access` from Anywhere.
 5. Inside of "Security", navigate to "MongoDB Users" and create an user with the Atlasadmin permissions. Write down the credentials as these will be ones used to connect later on.
-6. Vamos a la pestaña  Overview  y pulsamos en  CONNECT . Elegimos Connect your Application .
-   1. Nos aseguramos que el DRIVER sea Node y copiamos el texto de Connection StringOnly.
-   2. Guardamos la cadena de conexión teniendo cuidado de sustituir por la contraseña delusuario de la base de datos.
-   3. En la cadena de conexión, podemos sustituir test por el nombre que queramos que tenga nuestra base de datos.
+6. Navigate to the "Overview" tab and press "CONNECT". Choose "Connect your Application".
+   1. Ensure that the DRIVER is Node and copy the text "Connection String Only".
+   2. Store the connection string. Be sure that you substitute the password with the real password you specified.
+   3. In the connection string substitute `test` with the name we gave to the created database
 
 ### With account
 1. Access with you account and in the "Collections" tab press the button "Create Database" and create a new database.
