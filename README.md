@@ -6,7 +6,7 @@ SERVER(BACK) - CONFIGURACIÓN DEL ENTORNO LOCAL
 
 2.En el fichero .env, añadir la URL de la base de datos local. También tenemos que añadir otrosdatos que no queremos que se suban al repositorio (credenciales, claves API...).
 
-3.En app.js poner antes del module.exports cual es el index que tiene que enviar  app.use((req, res) => {     res.sendFile(__dirname + "/public/index.html");    });
+3.En app.js poner antes del module.exports cual es el index que tiene que enviar  `app.use((req, res) => {     res.sendFile(__dirname + "/public/index.html");    });`
 
 
 CLIENT(FRONT)- CONFIGURACIÓN DEL ENTORNO LOCAL
@@ -17,8 +17,11 @@ CLIENT(FRONT)- CONFIGURACIÓN DEL ENTORNO LOCAL
 
 3.Poner las variables de entornos.  También tenemos que añadir otros datos que no queremos quese suban al repositorio y pertenecen al front (credenciales, claves API...)●  .env.dev    REACT_APP_URL=http://localhost:5000/api●     .env.prod    REACT_APP_URL= https://name-of-your-app.herokuapp.com/api
 
-4.Dentro del archivo package.json de la parte de client hay que configurar los scripts:     "start": "dotenv -e .env.dev react-scripts start"     "build-dev": "dotenv -e .env.dev react-scripts build"     "build-prod": "dotenv -e .env.prod react-scripts build"
-Hacer npm run build-prod en la carpeta de client y mover todo el  CONTENIDO  de la carpeta builddentro de  public  de  server .
+4.Dentro del archivo package.json de la parte de client hay que configurar los scripts:     
+
+`"start": "dotenv -e .env.dev react-scripts start"     "build-dev": "dotenv -e .env.dev react-scripts build"     "build-prod": "dotenv -e .env.prod react-scripts build"`
+
+Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO de la carpeta builddentro de public de server .
 
 ##CONFIGURACIÓN DE HEROKU
 
@@ -29,7 +32,7 @@ SIN CUENTA
 2.Crear app. Región:  Europa 
 
 Deploy a Heroku React - Google Docs https://docs.google.com/document/d/1aoj94Nf71matk7trUdsPCFbNwvkm-WH9_EQ47Syk46k/edit#2/8DEPLOY A HEROKU
-5.Hacer npm run build-prod en la carpeta de client y mover todo el  CONTENIDO  de la carpeta builddentro de  public  de  server .CONFIGURACIÓN DE HEROKU
+5.Hacer `npm run build-prod` en la carpeta de client y mover todo el  CONTENIDO  de la carpeta build dentro de  public  de  server .CONFIGURACIÓN DE HEROKU
 
 ●SIN CUENTA
 
