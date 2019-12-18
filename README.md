@@ -83,7 +83,7 @@ Try to have only one seed file that you can run right away and that populates al
 2. Create the two variable files in the root of the `client` folder by issuing in the command line `touch .env.dev .env.prod`.
 3. Write the different environments variables.  También tenemos que añadir otros datos que no queremos quese suban al repositorio y pertenecen al front (credenciales, claves API...)
     1. `.env.dev` -> `REACT_APP_URL=http://localhost:5000/api`
-    2. `.env.prod` -> `REACT_APP_URL= https://name-of-your-app.Herokuapp.com/api`
+    2. `.env.prod` -> `REACT_APP_URL= https://name-of-your-app.herokuapp.com/api`
 4. Inside of the `package.json` file in the client part we have to configure these scripts:
 ```
     "start": "dotenv -e .env.dev react-scripts start"
@@ -100,7 +100,7 @@ Create a new app in Heroku using the credentials you used in the last project.
 ### Creating an account
 1. Create account.
 2. Create app. Region: Europe.
-3. Download and install the Heroku command line tools: https://devcenter.Heroku.com/articles/Heroku-cli.
+3. Download and install the Heroku command line tools: https://devcenter.heroku.com/articles/Heroku-cli.
 
 <img src="https://raw.githubusercontent.com/webmad-shared/deploy-to-heroku-react-instructions/master/img/capture1.png" alt="">
    
